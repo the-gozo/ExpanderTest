@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExpanderTest.MainPage"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" >
+
+    <StackLayout>
+        <xct:Expander>
+            <xct:Expander.Header>
+                <Label Text="Keep togglin'"></Label>
+            </xct:Expander.Header>
+            <xct:Expander.ContentTemplate>
+                <DataTemplate>
+                    <CollectionView ItemsSource="{Binding Strings}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}" />
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </DataTemplate>
+            </xct:Expander.ContentTemplate>
+        </xct:Expander>
+        
+        <CollectionView ItemsSource="{Binding Strings}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding .}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>
